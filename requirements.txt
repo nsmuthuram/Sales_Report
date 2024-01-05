@@ -2,5 +2,5 @@ pandas==1.5.2
 plotly==5.11.0
 streamlit==1.16.0
 openpyxl==3.0.10
-s3fs==x.x.x
+s3fs==0.0.1
 st-files-connection
