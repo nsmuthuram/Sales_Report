@@ -25,7 +25,8 @@ st.dataframe(   df,
                 use_container_width = True,
                 #height = 1000,
                 hide_index=True, 
-                column_order=("Customer_type", "Gender", "City"))
+                column_order=("Customer_type", "Gender", "City"),
+            )
 
 # HIDE STREAMLIT STYLE
 hide_st_style="""
