@@ -20,7 +20,8 @@ df= pd.read_excel(
 
 
 
-st.dataframe(   df
+st.dataframe(   df,
+             hide_index=True
             )
 
 # HIDE STREAMLIT STYLE
