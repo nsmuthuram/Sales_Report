@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from st_files_connection import FilesConnection
+
 
 st.set_page_config(
     page_title="Customer",
@@ -8,6 +10,7 @@ st.set_page_config(
 
 
 st.title('Customer Report')
+
 
 df= pd.read_excel(
       io='supermarkt_sales.xlsx',
@@ -22,6 +25,16 @@ df= pd.read_excel(
 
 st.dataframe(   df
             )
+
+# Create connection object and retrieve file contents.
+# Specify input format is a csv and to cache the result for 600 seconds.
+conn = st.connection('s3', type=FilesConnection)
+df1 = conn.read("msawsbuckets3/supermarkt_sales.xlsx", input_format="xlsx", ttl=600)
+
+
+# Print results.
+for row in df1.itertuples():
+    st.write(f"{row.Owner} has a :{row.Pet}:")
 
 # HIDE STREAMLIT STYLE
 hide_st_style="""
