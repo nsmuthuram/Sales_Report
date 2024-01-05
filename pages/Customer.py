@@ -33,9 +33,8 @@ conn = st.connection('s3', type=FilesConnection)
 df1 = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", ttl=600)
 
 
-# Print results.
-for row in df1.itertuples():
-    st.write(f"{row.Owner} has a :{row.Pet}:")
+st.dataframe(   df1
+            )
 
 # HIDE STREAMLIT STYLE
 hide_st_style="""
