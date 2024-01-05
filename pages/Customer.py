@@ -1,6 +1,7 @@
 import streamlit as st
-import pandas as pd
 from st_files_connection import FilesConnection
+import pandas as pd
+
 
 
 st.set_page_config(
