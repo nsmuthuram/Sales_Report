@@ -19,10 +19,6 @@ df= pd.read_excel(
     )
 
 st.dataframe(   df,
-                #width = 200,
-                use_container_width = True,
-                #height = 1000,
-                hide_index=True, 
                 column_order=("Product line", "Branch", "Unit price")
             )
 
