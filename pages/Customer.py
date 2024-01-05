@@ -21,7 +21,7 @@ df= pd.read_excel(
 
 
 st.dataframe(   df,
-             hide_index=True,
+             column_order=("Product line", "Branch", "Unit price"),
             )
 
 # HIDE STREAMLIT STYLE
