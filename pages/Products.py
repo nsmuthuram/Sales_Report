@@ -18,8 +18,7 @@ df= pd.read_excel(
       nrows=1000,
     )
 
-st.dataframe(   df,
-                column_order=("Product line", "Branch", "Unit price"),
+st.dataframe(   df
             )
 
 # HIDE STREAMLIT STYLE
