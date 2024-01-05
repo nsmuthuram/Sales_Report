@@ -19,7 +19,7 @@ df= pd.read_excel(
     )
 
 st.dataframe(   df,
-                column_order=("Product line", "Branch", "Unit price")
+                column_order=("Product line", "Branch", "Unit price"),
             )
 
 # HIDE STREAMLIT STYLE
