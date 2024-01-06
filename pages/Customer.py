@@ -19,10 +19,6 @@ conn = st.connection('s3', type=FilesConnection)
 # Specify input format is a csv and to cache the result for 600 seconds.
 df = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", usecols=["City", "Customer_type", "Gender"], ttl=600)
 
-
-st.dataframe(   df
-            )
-
 st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
 
 # HIDE STREAMLIT STYLE
