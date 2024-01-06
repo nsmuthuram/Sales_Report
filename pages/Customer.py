@@ -13,28 +13,14 @@ st.set_page_config(
 st.title('Customer Report')
 
 
-df= pd.read_excel(
-      io='supermarkt_sales.xlsx',
-      #engine='openpyxl',
-      sheet_name='Sales',
-      skiprows=3,
-      usecols='E, F, D',
-      nrows=1000,
-    )
+# Create connection object and retrieve file contents.
+conn = st.connection('s3', type=FilesConnection)
 
+# Specify input format is a csv and to cache the result for 600 seconds.
+df = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", usecols=["City", "Customer_type", "Gender"], ttl=600)
 
 
 st.dataframe(   df
-            )
-
-# Create connection object and retrieve file contents.
-# Specify input format is a csv and to cache the result for 600 seconds.
-conn = st.connection('s3', type=FilesConnection)
-df1 = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", usecols=["City", "Customer_type", "Gender"], ttl=600)
-#df2 = df1."City"
-
-
-st.dataframe(   df1
             )
 
 # HIDE STREAMLIT STYLE
