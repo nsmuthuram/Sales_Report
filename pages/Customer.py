@@ -30,11 +30,11 @@ st.dataframe(   df
 # Create connection object and retrieve file contents.
 # Specify input format is a csv and to cache the result for 600 seconds.
 conn = st.connection('s3', type=FilesConnection)
-df1 = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", ttl=600)
-df2 = df1."City"
+df1 = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", usecols=['City', 'Gender'], ttl=600)
+#df2 = df1."City"
 
 
-st.dataframe(   df2
+st.dataframe(   df1
             )
 
 # HIDE STREAMLIT STYLE
