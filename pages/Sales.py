@@ -1,4 +1,5 @@
 import streamlit as st
+from st_files_connection import FilesConnection
 import plotly.express as px
 import pandas as pd
 
@@ -9,15 +10,11 @@ st.set_page_config(
 
 st.title('Sales Report')
 
-df= pd.read_excel(
-      io='supermarkt_sales.xlsx',
-      #engine='openpyxl',
-      sheet_name='Sales',
-      skiprows=3,
-      usecols='B:R',
-      nrows=1000,
-    )
+# Create connection object and retrieve file contents.
+conn = st.connection('s3', type=FilesConnection)
 
+# Specify input format is a csv and to cache the result for 600 seconds.
+df = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", ttl=600)
 
 # SIDEBAR
 st.sidebar.header("Please Filter Here:")
