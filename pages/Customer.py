@@ -31,7 +31,7 @@ st.dataframe(   df
 # Specify input format is a csv and to cache the result for 600 seconds.
 conn = st.connection('s3', type=FilesConnection)
 df1 = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", ttl=600)
-df2 = pd.read_csv(df1, skiprows=[0, 1])
+df2 = df1
 
 
 st.dataframe(   df2
