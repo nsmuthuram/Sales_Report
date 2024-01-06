@@ -23,6 +23,8 @@ df = conn.read("msawsbuckets3/supermarkt_sales.csv", input_format="csv", usecols
 st.dataframe(   df
             )
 
+st.markdown(df.style.hide(axis="index").to_html(), unsafe_allow_html=True)
+
 # HIDE STREAMLIT STYLE
 hide_st_style="""
             <style>
