@@ -80,7 +80,8 @@ fig_product_sales = px.bar(
     y=sales_by_product_line.index,
     orientation="h",
     title="<b>Sales by Product Line</b>",
-    color_discrete_sequence=["#6fa8dc"] * len(sales_by_product_line),
+    color_discrete_sequence=["#c27ba0"] * len(sales_by_product_line),
+    #Colour of Chart
     template="plotly_white",
 )
 
@@ -118,7 +119,7 @@ fig_payment_sales=px.bar(
     x=sales_by_payment.index,
     y="Total",
     title="<b>Sales by Payment</b>",
-    color_discrete_sequence=["#6fa8dc"] * len(sales_by_payment),
+    color_discrete_sequence=["#c27ba0"] * len(sales_by_payment),
     template="plotly_white",
 )
 
