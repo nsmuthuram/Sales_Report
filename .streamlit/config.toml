@@ -9,8 +9,8 @@ backgroundColor = "#00325B"
 # Dark Blue Colour
 
 # Background color used for the sidebar and most interactive widgets.
-secondaryBackgroundColor = "#55B2FF"
-# Light Blue
+secondaryBackgroundColor = "#ead1dc"
+# Purple / Pink
 
 # Color used for almost all text.
 textColor = "#FFFFFF"
